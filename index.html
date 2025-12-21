@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Renato - Estudante de Sistemas de Informação e Full-Stack Engineer. Portfolio de projetos e habilidades técnicas.">
+    <meta name="author" content="Renato">
+    
+    <title>Renato | Full-Stack Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script src="tailwind.config.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary/30 selection:text-white">
+    
+    <!-- Main Container -->
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+        
+        <!-- Background Effects -->
+        <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] tech-grid-bg"></div>
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen"></div>
+            <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-accent-purple/5 rounded-full blur-[100px] mix-blend-screen animate-pulse-slow"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"></div>
+        </div>
+        
+        <!-- Header / Navigation -->
+        <!-- Header / Navigation -->
+        <header class="sticky top-0 z-50 glass-panel border-b border-white/5">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-6 md:px-12 lg:px-24 flex justify-center">
+                    <div class="flex w-full max-w-[1280px] items-center justify-between py-4">
+                        
+                        <!-- Logo -->
+                        <div class="flex items-center gap-3 text-white">
+                            <div class="flex items-center justify-center size-8 rounded bg-primary/20 text-primary border border-primary/30 shadow-[0_0_10px_rgba(43,108,238,0.3)]">
+                                <span class="material-symbols-outlined text-sm">terminal</span>
+                            </div>
+                            <h2 class="text-white text-lg font-bold tracking-tight font-display">
+                                Renato<span class="text-primary">.dev</span>
+                            </h2>
+                        </div>
+                        
+                        <!-- Desktop Navigation -->
+                        <nav class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                            <div class="flex items-center gap-8">
+                                <a class="text-slate-400 hover:text-white text-sm font-medium transition-colors font-mono hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" href="#about">
+                                    01.About
+                                </a>
+                                <a class="text-slate-400 hover:text-white text-sm font-medium transition-colors font-mono hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" href="#work">
+                                    02.Projects
+                                </a>
+                                <a class="text-slate-400 hover:text-white text-sm font-medium transition-colors font-mono hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]" href="#stack">
+                                    03.Arsenal
+                                </a>
+                            </div>
+                            <button class="btn-neon flex items-center justify-center overflow-hidden rounded-lg h-9 px-5 text-sm font-bold tracking-wide">
+                                <span class="truncate">Resume</span>
+                            </button>
+                        </nav>
+                        
+                        <!-- Mobile Menu Button -->
+                        <div class="md:hidden text-white cursor-pointer">
+                            <span class="material-symbols-outlined">menu</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <section class="relative z-10 flex flex-col justify-center min-h-[85vh] pt-10 pb-10">
+            <div class="px-6 md:px-12 lg:px-24 flex flex-1 justify-center">
+                <div class="w-full max-w-[1280px] flex flex-col lg:flex-row gap-12 lg:items-center">
+                    
+                    <!-- Hero Content -->
+                    <div class="flex flex-col gap-8 flex-1 lg:max-w-[650px]">
+                        <div class="flex flex-col gap-4 text-left">
+                            
+                            <!-- Status Badge -->
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-white/10 w-fit shadow-[0_0_15px_rgba(34,197,94,0.15)] backdrop-blur-sm">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-[pulse_2s_infinite]"></span>
+                                <span class="text-xs font-mono text-slate-400">Available for hire</span>
+                            </div>
+                            
+                            <!-- Main Heading -->
+                            <h1 class="text-white text-5xl md:text-7xl font-black leading-[1.1] tracking-tight font-display text-glow">
+                                Estudante de <br>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">Sistemas de Informação</span> <br>
+                                &amp; Curioso por Natureza
+                            </h1>
+                            
+                            <!-- Description -->
+                            <div class="pl-4 border-l-2 border-primary/50 py-1 shadow-[inset_10px_0_20px_-10px_rgba(43,108,238,0.2)]">
+                                <p class="font-mono text-slate-400 text-sm md:text-base leading-relaxed">
+                                    <span class="text-primary text-glow">&gt;</span> Renato | BSI Student &amp; Full-Stack Engineer<br>
+                                    <span class="text-primary text-glow">&gt;</span> Crafting robust, scalable solutions.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <button class="btn-neon group flex items-center justify-center rounded-lg h-12 px-6 text-sm font-bold tracking-wide">
+                                <span class="mr-2">Explore Case Studies</span>
+                                <span class="material-symbols-outlined text-[18px] group-hover:translate-y-1 transition-transform">arrow_downward</span>
+                            </button>
+                            <button class="btn-neon flex items-center justify-center rounded-lg h-12 px-6 text-sm font-bold tracking-wide">
+                                <span class="mr-2">Download CV</span>
+                                <span class="material-symbols-outlined text-[18px] group-hover:rotate-[-45deg] transition-transform">download</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Hero Visual -->
+                    <div class="flex-1 w-full h-full flex items-center justify-center perspective-[1000px] mt-8 lg:mt-0">
+                        <div class="relative w-full aspect-square max-w-[500px] md:max-w-[600px]">
+                            
+                            <!-- Glow Effect -->
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/10 blur-[80px] rounded-full"></div>
+                            
+                            <!-- Terminal Window -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-surface-highlight/80 to-background-dark/90 rounded-2xl border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col backdrop-blur-xl ring-1 ring-white/5">
+                                
+                                <!-- Terminal Header -->
+                                <div class="h-8 border-b border-white/5 bg-black/40 flex items-center px-4 gap-2 justify-between">
+                                    <div class="flex gap-2">
+                                        <div class="size-2.5 rounded-full bg-red-500/20 shadow-[0_0_5px_rgba(239,68,68,0.4)]"></div>
+                                        <div class="size-2.5 rounded-full bg-yellow-500/20 shadow-[0_0_5px_rgba(234,179,8,0.4)]"></div>
+                                        <div class="size-2.5 rounded-full bg-green-500/20 shadow-[0_0_5px_rgba(34,197,94,0.4)]"></div>
+                                    </div>
+                                    <div class="text-[10px] font-mono text-slate-500">sys_arch.v2</div>
+                                </div>
+                                
+                                <!-- Terminal Content -->
+                                <div class="flex-1 relative p-6 bg-[url('https://placeholder.pics/svg/600/0a0e14/2b6cee-1c2635/Abstract%20Server%20Data%20Flow')] bg-cover bg-center opacity-80 mix-blend-screen overflow-hidden">
+                                    
+                                    <!-- Floating Icons -->
+                                    <div class="absolute top-1/4 left-1/4 p-4 glass-panel rounded-lg border border-primary/50 shadow-[0_0_20px_rgba(43,108,238,0.3)] animate-[float_6s_ease-in-out_infinite]">
+                                        <span class="material-symbols-outlined text-primary text-3xl drop-shadow-[0_0_10px_rgba(43,108,238,0.8)]">memory</span>
+                                    </div>
+                                    <div class="absolute bottom-1/3 right-1/4 p-4 glass-panel rounded-lg border border-accent-purple/50 shadow-[0_0_20px_rgba(168,85,247,0.3)] animate-[float_7s_ease-in-out_infinite_reverse]">
+                                        <span class="material-symbols-outlined text-accent-purple text-3xl drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]">cloud_sync</span>
+                                    </div>
+                                    
+                                    <!-- Animated Lines SVG -->
+                                    <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-60">
+                                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+                                        </filter>
+                                        <path d="M150 150 C 250 150, 300 250, 400 300" stroke="#2b6cee" stroke-width="2" fill="none" stroke-dasharray="10,5" filter="url(#glow)">
+                                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite"></animate>
+                                        </path>
+                                        <path d="M400 300 C 350 200, 450 150, 350 250" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow)">
+                                            <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"></animate>
+                                        </path>
+                                    </svg>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <!-- About Section -->
+        <section id="about" class="relative z-10 py-24 border-y border-white/5 bg-surface/20">
+            <div class="px-6 md:px-12 lg:px-24 flex justify-center">
+                <div class="w-full max-w-[1280px] grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 items-center">
+                    
+                    <!-- About Content -->
+                    <div class="md:col-span-7 order-2 md:order-1 flex flex-col gap-6">
+                        
+                        <!-- Section Label -->
+                        <div class="inline-flex items-center gap-2 mb-2">
+                            <div class="h-px w-8 bg-primary"></div>
+                            <span class="text-primary font-mono text-sm tracking-widest uppercase">The Developer</span>
+                        </div>
+                        
+                        <!-- Heading -->
+                        <h2 class="text-3xl md:text-5xl font-bold text-white font-display leading-tight">
+                            Engineering Logic <br>&amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">Human Creativity</span>
+                        </h2>
+                        
+                        <!-- Description -->
+                        <div class="space-y-6 text-slate-400 font-light leading-relaxed text-lg">
+                            <p>
+                                Beyond the code, I am a student of Bachelor of Information Systems (BSI), deeply entrenched in the philosophy of building systems that serve people.
+                            </p>
+                            <p>
+                                My approach combines rigorous architectural thinking with an intuitive user experience. I don't just write functions; I craft digital ecosystems where data flows seamlessly and interfaces respond instantly. Every semi-colon has a purpose, every pixel a reason.
+                            </p>
+                        </div>
+                        
+                        <!-- Stats -->
+                        <div class="mt-4 flex flex-wrap items-center gap-6 pt-6 border-t border-white/5">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 rounded bg-surface border border-white/10">
+                                    <span class="material-symbols-outlined text-primary">school</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-bold text-sm">BSI Student</span>
+                                    <span class="text-xs text-slate-500 font-mono">Academic Excellence</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 rounded bg-surface border border-white/10">
+                                    <span class="material-symbols-outlined text-accent-purple">extension</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-bold text-sm">Problem Solver</span>
+                                    <span class="text-xs text-slate-500 font-mono">Analytical Approach</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Profile Image -->
+                    <div class="md:col-span-5 order-1 md:order-2 flex justify-center md:justify-end">
+                        <div class="relative group w-full max-w-[400px]">
+                            
+                            <!-- Glow Effect -->
+                            <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
+                            
+                            <!-- Image Card -->
+                            <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl glass-panel p-3 rotate-2 group-hover:rotate-0 transition-transform duration-500">
+                                <div class="rounded-xl overflow-hidden bg-surface-highlight aspect-[3/4] relative group-hover:scale-[1.01] transition-transform duration-500">
+                                    <img 
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdwqRazBjwr3z6BbwW6z1qHNsGlL1OsnU6crYbH1sV2J3nvzlzCBav1XXmmu96DUitM4cEwNHsIxL-2Bm7GiC8BcGuCvuDC02YHcHU6TnS13DKg5NwyTJQyxZg2DCHGF_TaM4P4HHBJKsmyxLJt4Yz9rFdhAZCrbuoxjjrFw7CUOd5Euw-5UXJ_u2k0UTpdyjOtDraUnLBUCVE6s6SIqaulZcdl6lw9gbmBw21utFgntC6Bn7qhdRFErF9ahVFkFrnuvKSTPdH778" 
+                                        alt="Renato Portrait" 
+                                        class="object-cover w-full h-full opacity-90"
+                                    >
+                                    <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                                        <div class="inline-block px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10">
+                                            <span class="text-xs font-mono text-white">Renato.ts</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Decorative Icons -->
+                            <div class="absolute -top-6 -right-6 text-accent-gold opacity-50 text-4xl animate-bounce">
+                                <span class="material-symbols-outlined text-4xl">lightbulb</span>
+                            </div>
+                            <div class="absolute -bottom-4 -left-4 text-primary opacity-50 text-4xl animate-pulse">
+                                <span class="material-symbols-outlined text-4xl">code_blocks</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <!-- Projects Section -->
+        <section id="work" class="relative z-10 py-24">
+            <div class="px-6 md:px-12 lg:px-24 flex justify-center">
+                <div class="w-full max-w-[1280px] flex flex-col">
+                    
+                    <!-- Section Header -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/10 pb-6">
+                        <div>
+                            <p class="font-mono text-primary text-sm mb-2 drop-shadow-[0_0_5px_rgba(43,108,238,0.5)]">
+                                02. Selected Works
+                            </p>
+                            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Projetos</h2>
+                        </div>
+                        <p class="text-slate-400 max-w-md text-sm md:text-right mt-4 md:mt-0">
+                            A curated selection of complex systems focusing on performance, scalability, and architectural design.
+                        </p>
+                    </div>
+                    
+                    <!-- Project Cards -->
+                    
+                    <!-- Project 1: Real-Time Logistics Tracker -->
+                    <article class="group mb-16 last:mb-0 @container">
+                        <div class="flex flex-col lg:flex-row bg-surface rounded-xl overflow-hidden border border-white/5 card-hover-glow transition-all duration-500 shadow-lg">
+                            
+                            <!-- Project Content -->
+                            <div class="flex-1 p-8 lg:p-10 flex flex-col justify-between order-2 lg:order-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                                    <span class="material-symbols-outlined text-9xl">local_shipping</span>
+                                </div>
+                                
+                                <div class="relative z-10">
+                                    <!-- Tags -->
+                                    <div class="flex gap-2 mb-4">
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Kafka</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Go</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">React</span>
+                                    </div>
+                                    
+                                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                        Real-Time Logistics Tracker
+                                    </h3>
+                                    
+                                    <p class="text-slate-400 mb-6 leading-relaxed">
+                                        Developed an event-driven microservices architecture to track fleet telemetry in real-time. Implemented geofencing logic and WebSocket delivery to a react dashboard.
+                                    </p>
+                                    
+                                    <!-- Outcome -->
+                                    <div class="bg-background-dark/50 rounded-lg p-4 border-l-4 border-accent-gold mb-8 shadow-inner">
+                                        <p class="font-mono text-xs text-accent-gold mb-1">KEY OUTCOME</p>
+                                        <p class="text-white font-medium">
+                                            Reduced fleet idle time by <span class="text-accent-gold font-bold">15%</span> through actionable real-time insights.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline hover:text-primary-glow transition-colors">
+                                        <span>Read Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Project Image -->
+                            <div class="flex-1 min-h-[300px] bg-background-dark order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-white/5 relative group-hover:bg-background-dark/80 transition-colors">
+                                <div class="absolute inset-0 p-8 flex items-center justify-center">
+                                    <div class="w-full h-full bg-[url('https://placeholder.pics/svg/600/0B0F15/2b6cee-1c2635/Logistics%20Microservices%20Diagram')] bg-contain bg-no-repeat bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 2: Distributed Cloud Storage -->
+                    <article class="group mb-16 last:mb-0 @container">
+                        <div class="flex flex-col lg:flex-row bg-surface rounded-xl overflow-hidden border border-white/5 card-hover-glow transition-all duration-500 shadow-lg">
+                            <div class="flex-1 p-8 lg:p-10 flex flex-col justify-between order-2 lg:order-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                                    <span class="material-symbols-outlined text-9xl">cloud_queue</span>
+                                </div>
+                                
+                                <div class="relative z-10">
+                                    <div class="flex gap-2 mb-4">
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">AWS</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Docker</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Redis</span>
+                                    </div>
+                                    
+                                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                        Distributed Cloud Storage
+                                    </h3>
+                                    
+                                    <p class="text-slate-400 mb-6 leading-relaxed">
+                                        Designed a fault-tolerant storage system distributed across 3 AWS regions. Utilized consistent hashing for data sharding and Redis for hot-layer caching.
+                                    </p>
+                                    
+                                    <div class="bg-background-dark/50 rounded-lg p-4 border-l-4 border-primary mb-8 shadow-inner">
+                                        <p class="font-mono text-xs text-primary mb-1">KEY OUTCOME</p>
+                                        <p class="text-white font-medium">
+                                            Achieved <span class="text-primary font-bold">99.9% Uptime</span> with zero data loss during simulated regional failure.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline hover:text-primary-glow transition-colors">
+                                        <span>Read Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-1 min-h-[300px] bg-background-dark order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-white/5 relative group-hover:bg-background-dark/80 transition-colors">
+                                <div class="absolute inset-0 p-8 flex items-center justify-center">
+                                    <div class="w-full h-full bg-[url('https://placeholder.pics/svg/600/0B0F15/2b6cee-1c2635/Distributed%20Cloud%20Architecture')] bg-contain bg-no-repeat bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 3: AI-Powered Finance Dashboard -->
+                    <article class="group mb-16 last:mb-0 @container">
+                        <div class="flex flex-col lg:flex-row bg-surface rounded-xl overflow-hidden border border-white/5 card-hover-glow transition-all duration-500 shadow-lg">
+                            <div class="flex-1 p-8 lg:p-10 flex flex-col justify-between order-2 lg:order-1 relative overflow-hidden">
+                                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                                    <span class="material-symbols-outlined text-9xl">show_chart</span>
+                                </div>
+                                
+                                <div class="relative z-10">
+                                    <div class="flex gap-2 mb-4">
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Python</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">TensorFlow</span>
+                                        <span class="px-2 py-1 rounded bg-white/5 text-xs font-mono text-slate-300 border border-white/10">Next.js</span>
+                                    </div>
+                                    
+                                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                        AI-Powered Finance Dashboard
+                                    </h3>
+                                    
+                                    <p class="text-slate-400 mb-6 leading-relaxed">
+                                        Built a predictive analytics engine for personal finance using ARIMA models. The system forecasts spending trends and categorizes transactions automatically.
+                                    </p>
+                                    
+                                    <div class="bg-background-dark/50 rounded-lg p-4 border-l-4 border-accent-pink mb-8 shadow-inner">
+                                        <p class="font-mono text-xs text-accent-pink mb-1">KEY OUTCOME</p>
+                                        <p class="text-white font-medium">
+                                            Model accuracy of <span class="text-accent-pink font-bold">92%</span> on historical transaction datasets.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 relative z-10">
+                                    <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline hover:text-primary-glow transition-colors">
+                                        <span>Read Case Study</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex-1 min-h-[300px] bg-background-dark order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-white/5 relative group-hover:bg-background-dark/80 transition-colors">
+                                <div class="absolute inset-0 p-8 flex items-center justify-center">
+                                    <div class="w-full h-full bg-[url('https://placeholder.pics/svg/600/0B0F15/2b6cee-1c2635/ML%20Pipeline%20Flowchart')] bg-contain bg-no-repeat bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technical Stack Section -->
+        <!-- Technical Stack Section -->
+        <section id="stack" class="relative z-10 py-24 bg-surface/10">
+            <div class="px-6 md:px-12 lg:px-24 flex justify-center">
+                <div class="w-full max-w-[1280px]">
+                    
+                    <!-- Section Header -->
+                    <div class="flex flex-col mb-16 text-center">
+                        <p class="font-mono text-primary text-sm mb-2 drop-shadow-[0_0_5px_rgba(43,108,238,0.5)]">
+                            03. The Stack
+                        </p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Technical Arsenal</h2>
+                    </div>
+                    
+                    <!-- Skills Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+                        
+                        <!-- Decorative Lines -->
+                        <div class="absolute inset-0 pointer-events-none hidden lg:block">
+                            <div class="absolute top-[160px] left-[30%] right-[60%] h-[1px] bg-gradient-to-r from-primary/30 to-primary/30"></div>
+                            <div class="absolute top-[200px] bottom-[200px] left-[16.66%] w-[1px] bg-gradient-to-b from-primary/20 to-transparent"></div>
+                        </div>
+                        
+                        <!-- Backend Category -->
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                                <span class="material-symbols-outlined text-primary">dns</span>
+                                <h3 class="font-mono text-lg text-white font-bold">Backend</h3>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-white group-hover:text-primary transition-colors">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhvuHaQIpDsucCIjI6hUc_yeTVG_M_tnxxLpOIpaFs6lwYNoeRmuM1m_pSpvoyt0VkU4WAD3I7hY_ZD6OC1TBVzGvtn5drekt-FsFvWQRcghtecMP_YVQqVnBGP5PFyv_RyC1BbsrGy0jnbujEo8aoQGb20OixSfgP3blJzwqmpMt24MA9sS9DJHPth0yr2d9F5fwSYpEC_MGYYKZwGAXSL69IJXkP9PQHhkMrGrdp02nE8t8Ub6VN3_lemhOV2HyLmm8FHPEMNXc" alt="Python" class="w-6 h-6">
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-primary transition-colors">Python</p>
+                                        <p class="text-xs text-slate-500 font-mono">Core Language</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Database Category -->
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                                <span class="material-symbols-outlined text-accent-gold">database</span>
+                                <h3 class="font-mono text-lg text-white font-bold">Database</h3>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-slate-300 group-hover:text-accent-gold transition-colors">
+                                        <span class="material-symbols-outlined">table_view</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-gold transition-colors">SQL</p>
+                                        <p class="text-xs text-slate-500 font-mono">Standard Query</p>
+                                    </div>
+                                </div>
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-slate-300 group-hover:text-accent-gold transition-colors">
+                                        <span class="material-symbols-outlined">storage</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-gold transition-colors">MySQL</p>
+                                        <p class="text-xs text-slate-500 font-mono">RDBMS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Tools Category -->
+                        <div class="flex flex-col gap-5">
+                            <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                                <span class="material-symbols-outlined text-accent-purple">smart_toy</span>
+                                <h3 class="font-mono text-lg text-white font-bold">AI Tools</h3>
+                            </div>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-white group-hover:text-accent-purple transition-colors">
+                                        <span class="material-symbols-outlined">code_blocks</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-purple transition-colors">GitHub Copilot</p>
+                                        <p class="text-xs text-slate-500 font-mono">AI Pair Programmer</p>
+                                    </div>
+                                </div>
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-white group-hover:text-accent-purple transition-colors">
+                                        <span class="material-symbols-outlined">auto_fix_high</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-purple transition-colors">Stitch</p>
+                                        <p class="text-xs text-slate-500 font-mono">AI Integration</p>
+                                    </div>
+                                </div>
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-white group-hover:text-accent-purple transition-colors">
+                                        <span class="material-symbols-outlined">psychology</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-purple transition-colors">Gemini</p>
+                                        <p class="text-xs text-slate-500 font-mono">LLM Reasoning</p>
+                                    </div>
+                                </div>
+                                <div class="skill-node p-4 bg-surface border border-white/5 rounded-lg flex items-center gap-4 cursor-default group">
+                                    <div class="p-2 rounded bg-black/30 text-white group-hover:text-accent-purple transition-colors">
+                                        <span class="material-symbols-outlined">toys</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-base font-bold text-white group-hover:text-accent-purple transition-colors">Nano banana</p>
+                                        <p class="text-xs text-slate-500 font-mono">Experimental Model</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <!-- Footer -->
+        <footer class="relative z-10 border-t border-white/5 bg-background-dark py-12">
+            <div class="px-6 md:px-12 lg:px-24 flex justify-center">
+                <div class="w-full max-w-[1280px] flex flex-col md:flex-row justify-between items-center gap-6">
+                    
+                    <!-- Brand -->
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-white text-lg font-bold font-display">
+                            Renato<span class="text-primary">.dev</span>
+                        </h2>
+                        <p class="text-slate-500 text-sm font-mono">Engineered in Switzerland.</p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-6">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
+                            <span class="sr-only">GitHub</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkffx7Q0QhSfuft_Sr02Scyk8oxgSFwylm1viylmJCSaS0bRSNubYaCMHZe9oT_OLCablUpSc0rCHnDx-z2LOZge3H--CbFX-ZN5UGifyHtCq40pbXOrdx4N2Y-YLDM9QWE7FhShC1eEjAZDi-TSNO5cqhTjupf9eDknjmJBdCBcfavLC2YKfA7wwINvzheVhK7Cm4WMFy3Hov6p8F8GciC31YTaIV5bNPHvroSZuTa0N2OU0mcMNlUE9zTW8BZDora7FAQ28YQyw" alt="Github" class="w-6 h-6 filter grayscale hover:grayscale-0 transition-all">
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                            <span class="sr-only">LinkedIn</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvO7U-xgcSZtW_ZzQPZ_tTanoUkiX7X2WIJX0oloOwraKrnTLAVB0VRrFRdZW1IXjFW1ugnoTo5rAq3F0UES5tWxwvUz9FtJkmKvqBDsseTDIFzGGjskV1MzNpEUwAt1wjOoaixtHWNuD6SehIvxR1ybtsl5ilbwrZuSm68gcgXyjH-JXMfqQGVYmXpy6t6ro76bpybaazBrSrP9ULvWrCqEk3XGhhdYGhkw7et8SeFtsJcFBy8smKMaG_OrgGOWzUGHk7cUeHugc" alt="LinkedIn" class="w-6 h-6 filter grayscale hover:grayscale-0 transition-all">
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors" aria-label="Twitter">
+                            <span class="sr-only">Twitter</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUda-xUE5OOEob_R4dhuFJgPBCSvY_zR6Ui0UrfeAUGb9aH1iX8Stg0kYACAFlhfBcALarDlNGMyKnqEzeAQFSAxxaMCVPsRJxI5GvEngWUnr-fbYdHzKU3XIuUC8dmC0t7vBgW78SeO0v8oO_uvxb0D42lwccz-9POn_lmv-sihi6j0nr5XeaNOBHxAjHdvl5ANjBeKPb7k5iUWD-sUWB2LdeF29sdTaDjRLLr-Dk3TJX4qgRdHD4xxI2EuJlGhJsxgJHQjPNg9A" alt="Twitter" class="w-6 h-6 filter grayscale hover:grayscale-0 transition-all">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    
+</body>
+</html>
