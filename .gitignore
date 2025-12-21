@@ -1,0 +1,64 @@
+# ==========================================
+# .gitignore para Portfolio
+# ==========================================
+
+# Pastas de desenvolvimento/documentação
+construcao/
+.vscode/
+.idea/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências (se usar npm/yarn no futuro)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Arquivos de ambiente (se adicionar no futuro)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Arquivos de backup
+*.bak
+*.swp
+*.swo
+*~
+
+# Arquivos compilados/minificados (se usar build no futuro)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Cache
+.cache/
+*.cache
+
+# Arquivos de testes
+coverage/
+.nyc_output/
+
+# Documentos pessoais/sensíveis
+curriculo.pdf
+*.pdf
+src/docs/*.pdf
+src/docs/*.docx
+
+# Arquivos do Git
+.git/
+
+# Outros
+*.zip
+*.rar
+*.tar.gz

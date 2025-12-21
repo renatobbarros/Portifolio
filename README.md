@@ -1,99 +1,90 @@
-# Portfolio - Renato
+# 🚀 Portfólio Renato
 
-Portfolio profissional desenvolvido com HTML5, CSS3, JavaScript e Tailwind CSS.
+Portfolio profissional de Renato - Estudante de Sistemas de Informação e Full-Stack Engineer.
 
-## 📁 Estrutura do Projeto
+## 🌐 Tecnologias
+
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização customizada
+- **JavaScript (ES6+)** - Interatividade e funcionalidades
+- **Tailwind CSS** - Framework CSS utilitário
+- **Google Analytics** - Análise de tráfego
+
+## ✨ Funcionalidades
+
+- ✅ Design responsivo (mobile-first)
+- ✅ Sistema de internacionalização (PT-BR/EN)
+- ✅ Animações e transições suaves
+- ✅ Lazy loading de imagens
+- ✅ SEO otimizado
+- ✅ Performance otimizada
+- ✅ Google Analytics integrado
+
+## 📂 Estrutura do projeto
 
 ```
 portifolio-renato/
-│
-├── index.html          # Página principal do portfólio
-├── style.css           # Estilos personalizados organizados
-├── app.js              # Funcionalidades JavaScript
-├── tailwind.config.js  # Configuração do Tailwind CSS
-└── README.md           # Documentação do projeto
+├── index.html          # Página principal
+├── style.css           # Estilos customizados
+├── app.js              # Funcionalidades principais
+├── i18n.js             # Sistema de internacionalização
+├── projects.js         # Gerenciamento de projetos
+├── analytics.js        # Tracking de eventos GA4
+├── tailwind.config.js  # Configuração do Tailwind
+├── src/
+│   ├── img/            # Imagens do portfólio
+│   └── docs/           # Documentos (CV)
+└── README.md           # Este arquivo
 ```
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Como usar
 
-- **HTML5** - Estrutura semântica e acessível
-- **CSS3** - Estilos personalizados e animações
-- **JavaScript ES6** - Interatividade e navegação suave
-- **Tailwind CSS** - Framework CSS utility-first
-- **Google Fonts** - Tipografia (Inter e JetBrains Mono)
-- **Material Symbols** - Ícones
-
-## 🎨 Características
-
-### Design
-- Design moderno com tema dark
-- Efeitos de glassmorphism
-- Animações suaves e transições
-- Grid pattern de fundo
-- Efeitos neon e glow
-- Responsive design (mobile-first)
-
-### Estrutura
-- Header fixo com navegação
-- Seção Hero com apresentação
-- Seção About com perfil
-- Seção Projects com cards de projetos
-- Seção Tech Stack com habilidades
-- Footer com links sociais
-
-### Funcionalidades JavaScript
-- Smooth scrolling para navegação
-- Highlight de seção ativa
-- Scroll animations
-- Menu mobile (preparado para implementação)
-
-## 🚀 Como Usar
-
-1. **Abrir o site**
-   - Simplesmente abra o arquivo `index.html` em um navegador moderno
-
-2. **Desenvolvimento Local**
-   - Recomenda-se usar um servidor local (Live Server, etc.)
-   - Não há dependências para instalar (Tailwind é carregado via CDN)
-
-## 📝 Personalização
-
-### Cores (tailwind.config.js)
-```javascript
-colors: {
-    "primary": "#2b6cee",
-    "primary-glow": "#4facfe",
-    "accent-gold": "#e5c07b",
-    "accent-purple": "#a855f7",
-    "accent-pink": "#ec4899",
-    // ...
-}
+1. Clone o repositório:
+```bash
+git clone https://github.com/renatobbarros/Portifolio.git
 ```
 
-### Fontes
-- Display: Inter
-- Monospace: JetBrains Mono
+2. Abra o arquivo `index.html` em seu navegador
 
-## 🎯 Seções
+Ou acesse diretamente: [Seu domínio aqui]
 
-1. **Hero** - Apresentação inicial com título e CTAs
-2. **About** - Sobre o desenvolvedor com foto
-3. **Projects** - Showcase de projetos com detalhes técnicos
-4. **Tech Stack** - Tecnologias e ferramentas utilizadas
-5. **Footer** - Links de contato e redes sociais
+## 📊 Google Analytics
+
+O site está configurado com Google Analytics 4 para monitoramento de:
+- Visualizações de página
+- Cliques em projetos
+- Interações com redes sociais
+- Downloads de CV
+- Trocas de idioma
+- E mais...
 
 ## 📱 Responsividade
 
-O site é totalmente responsivo com breakpoints:
-- Mobile: < 768px
-- Tablet: 768px - 1024px
-- Desktop: > 1024px
+O site é totalmente responsivo e otimizado para:
+- 📱 Smartphones
+- 📱 Tablets
+- 💻 Desktops
+- 🖥️ Monitores wide
 
+## 🌍 Internacionalização
+
+Suporte completo para:
+- 🇧🇷 Português (PT-BR)
+- 🇺🇸 Inglês (EN)
+
+Com detecção automática de idioma do navegador.
 
 ## 📄 Licença
 
-Este projeto é de código aberto e está disponível para uso pessoal.
+© 2025 Renato. Todos os direitos reservados.
+
+## 📧 Contato
+
+- **Email:** renato.hbarros@ufrpe.br
+- **GitHub:** [@renatobbarros](https://github.com/renatobbarros)
+- **LinkedIn:** [renato-code](https://www.linkedin.com/in/renato-code/)
+- **Instagram:** [@renato_code](https://www.instagram.com/renato_code/)
 
 ---
 
-**Desenvolvido por Renato** 
+Desenvolvido com 💙 por Renato

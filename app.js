@@ -61,6 +61,11 @@
      * Setup scroll-based animations
      */
     function setupAnimations() {
+        // Check if browser supports IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            return; // Skip animations on older browsers
+        }
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -70,6 +75,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target); // Stop observing after animation
                 }
             });
         }, observerOptions);
@@ -86,12 +92,13 @@
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('header a[href^="#"]');
 
+        let ticking = false;
+
         function highlightActiveLink() {
             let current = '';
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 
                 if (window.pageYOffset >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
@@ -100,16 +107,25 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('text-white');
-                link.classList.add('text-slate-400');
-                
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.remove('text-slate-400');
+                if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('text-white');
                 }
             });
+
+            ticking = false;
         }
 
-        window.addEventListener('scroll', highlightActiveLink);
+        // Throttle scroll events for better performance
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    highlightActiveLink();
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        highlightActiveLink();
     }
 
     /**
