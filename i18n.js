@@ -11,8 +11,8 @@
     const translations = {
         'pt-BR': {
             // Meta
-            'meta.description': 'Renato - Estudante de Sistemas de Informação e Full-Stack Engineer. Portfolio de projetos e habilidades técnicas.',
-            'meta.title': 'Renato | Full-Stack Engineer',
+            'meta.description': 'Renato Code - Estudante de Sistemas de Informação e Full-Stack Engineer. Portfolio de projetos e habilidades técnicas.',
+            'meta.title': 'Renato Code',
             
             // Header
             'nav.about': '01.Sobre',
@@ -135,8 +135,8 @@
         
         'en': {
             // Meta
-            'meta.description': 'Renato - Information Systems Student and Full-Stack Engineer. Portfolio of projects and technical skills.',
-            'meta.title': 'Renato | Full-Stack Engineer',
+            'meta.description': 'Renato Code - Information Systems Student and Full-Stack Engineer. Portfolio of projects and technical skills.',
+            'meta.title': 'Renato Code',
             
             // Header
             'nav.about': '01.About',
