@@ -119,16 +119,12 @@
     function setupAnimations() {
         // Check if browser supports IntersectionObserver
         if (!('IntersectionObserver' in window)) {
-            // Fallback for older browsers - show all content
-            const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            animatedElements.forEach(el => {
-                el.style.opacity = '1';
-            });
+            // Fallback for older browsers - content is already visible
             return;
         }
 
         const observerOptions = {
-            threshold: 0.15,
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -142,33 +138,14 @@
             });
         }, observerOptions);
 
-        // Observe elements with animation classes
+        // Observe elements with animation classes (optional enhancement)
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         animatedElements.forEach(element => {
             observer.observe(element);
         });
 
-        // Add animation classes to sections
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section, index) => {
-            if (!section.classList.contains('animate-on-scroll')) {
-                section.classList.add('animate-on-scroll', 'fade-in-up');
-                // Add staggered delay
-                if (index > 0) {
-                    section.style.animationDelay = `${index * 0.1}s`;
-                }
-            }
-        });
-
-        // Animate cards and items
-        const cards = document.querySelectorAll('.glass-panel, .skill-node');
-        cards.forEach((card, index) => {
-            if (!card.classList.contains('animate-on-scroll')) {
-                card.classList.add('animate-on-scroll', 'scale-in');
-                card.style.animationDelay = `${(index % 3) * 0.1}s`;
-                observer.observe(card);
-            }
-        });
+        // Don't add animation classes automatically - let content be visible
+        // Users can add .animate-on-scroll class manually to specific elements if desired
     }
 
     /**

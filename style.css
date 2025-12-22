@@ -163,7 +163,8 @@ body {
 
 /* Animation classes */
 .animate-on-scroll {
-    opacity: 0;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-on-scroll.animated {
@@ -223,6 +224,27 @@ body {
 
 .mobile-nav-link {
     animation: slideDown 0.5s ease;
+    display: block;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(43, 108, 238, 0.1);
+    transform: translateX(10px);
+}
+
+/* Mobile menu improvements */
+@media (max-width: 768px) {
+    #mobileMenu nav {
+        padding: 2rem 1rem;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Cross-browser compatibility */
@@ -244,8 +266,113 @@ body {
    RESPONSIVE DESIGN
    =================================== */
 
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .glass-panel {
+        padding: 1.5rem !important;
+    }
+    
+    section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+}
+
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .text-glow {
         text-shadow: 0 0 20px rgba(43, 108, 238, 0.3);
+    }
+    
+    /* Hero section adjustments */
+    h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Glass panels spacing */
+    .glass-panel {
+        padding: 1.25rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    /* Section padding */
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Button sizing */
+    .btn-neon {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Grid adjustments */
+    .grid {
+        gap: 1rem !important;
+    }
+    
+    /* Skill nodes */
+    .skill-node {
+        padding: 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    /* Improve touch targets */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Stack better on mobile */
+    .md\:flex-row {
+        flex-direction: column !important;
+    }
+    
+    /* Text sizing */
+    p {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Container padding */
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Small mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .glass-panel {
+        padding: 1rem !important;
+    }
+    
+    /* Reduce spacing on small screens */
+    section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Make cards full width */
+    .grid > * {
+        width: 100% !important;
     }
 }
