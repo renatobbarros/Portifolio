@@ -47,14 +47,70 @@
      * Setup mobile menu toggle
      */
     function setupMobileMenu() {
-        const menuButton = document.querySelector('.md\\:hidden .material-symbols-outlined');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const langToggleMobile = document.getElementById('langToggleMobile');
+        const langToggle = document.getElementById('langToggle');
         
-        if (menuButton) {
-            menuButton.addEventListener('click', function() {
-                // Future: Implement mobile menu toggle
-                console.log('Mobile menu clicked - implement dropdown menu');
+        // Open mobile menu
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
             });
         }
+        
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+        
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Close menu when clicking nav links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+        
+        // Sync language toggle between desktop and mobile
+        if (langToggleMobile && langToggle) {
+            langToggleMobile.addEventListener('click', function() {
+                langToggle.click(); // Trigger desktop button (which has i18n logic)
+            });
+            
+            // Sync text content
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList' || mutation.type === 'characterData') {
+                        langToggleMobile.textContent = langToggle.textContent;
+                    }
+                });
+            });
+            
+            observer.observe(langToggle, {
+                childList: true,
+                characterData: true,
+                subtree: true
+            });
+        }
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                closeMobileMenu();
+            }
+        });
     }
 
     /**
@@ -63,26 +119,56 @@
     function setupAnimations() {
         // Check if browser supports IntersectionObserver
         if (!('IntersectionObserver' in window)) {
-            return; // Skip animations on older browsers
+            // Fallback for older browsers - show all content
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => {
+                el.style.opacity = '1';
+            });
+            return;
         }
 
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target); // Stop observing after animation
+                    entry.target.classList.add('animated');
+                    // Unobserve after animation to improve performance
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
+        // Observe elements with animation classes
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add animation classes to sections
         const sections = document.querySelectorAll('section');
-        sections.forEach(section => observer.observe(section));
+        sections.forEach((section, index) => {
+            if (!section.classList.contains('animate-on-scroll')) {
+                section.classList.add('animate-on-scroll', 'fade-in-up');
+                // Add staggered delay
+                if (index > 0) {
+                    section.style.animationDelay = `${index * 0.1}s`;
+                }
+            }
+        });
+
+        // Animate cards and items
+        const cards = document.querySelectorAll('.glass-panel, .skill-node');
+        cards.forEach((card, index) => {
+            if (!card.classList.contains('animate-on-scroll')) {
+                card.classList.add('animate-on-scroll', 'scale-in');
+                card.style.animationDelay = `${(index % 3) * 0.1}s`;
+                observer.observe(card);
+            }
+        });
     }
 
     /**

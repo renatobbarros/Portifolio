@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://renatobbarros.github.io/Portifolio/sitemap.xml
+
+# Block access to certain files
+Disallow: /src/docs/curriculo.pdf
+Disallow: /.git/
+Disallow: /*.json$
+
+# Crawl-delay
+Crawl-delay: 1
