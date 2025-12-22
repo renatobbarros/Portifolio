@@ -236,7 +236,7 @@ body {
 }
 
 /* Mobile menu improvements */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #mobileMenu nav {
         padding: 2rem 1rem;
     }
